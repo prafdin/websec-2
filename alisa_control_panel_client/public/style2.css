@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: #f0f0f0;
+}
+
+
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    height: 600px;
+    transform: translate(-50%, -50%);
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 50px;
+}
+
+.back-container {
+    position: fixed;
+    top: 30px;
+    left: 50px;
+}
+
+.music-input{
+    margin-bottom: 30px;
+}
+
+.music-input label{
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.music-input input{
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+.main-container button {
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.main-container button:hover {
+    background-color: dodgerblue;
+}
+
+

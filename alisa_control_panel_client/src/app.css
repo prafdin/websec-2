@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: left;
+    background-color: lightgray;
+
+    border-radius: 50px;
+    padding: 10px;
+}
+
+header img {
+    height: 100px;
+    width: 100px;
+}
+
+header label {
+    color: darkslategray;
+    font-weight: bold;
+    font-size: larger;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+
+    padding-left: 50px;
+}
+
+.menu-item {
+    /*background-color: #f4f4f4;*/
+    color: #565f5d;
+    font-size: x-large;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.menu-item:hover{
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+
+.menu-item:active {
+    background-color: lightblue;
+}
+
+.forms-place {
+    /*background-color: #42b983;*/
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /*height: 100px;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+
+.forms-place input,.forms-place button{
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+
+}
+
+.forms-place input {
+    margin: 5px;
+    border-color: whitesmoke;
+}
+
+.forms-place button {
+    margin: 30px;
+}
+
+.forms-place button:hover {
+    background-color: dodgerblue;
+}
+
+.control-item {
+    display: flex;
+    /*align-items: flex-start;*/
+    /*align-content: center;*/
+    /*align-items: start;*/
+    justify-content: center;
+    flex-direction: column;
+    height: 30px;
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 50px;
+    background-color: lightgray;
+}
+
+.control-item:hover {
+    background-color: dodgerblue;
+}
+
+.music-input {
+    margin-top: 10px;
+}
