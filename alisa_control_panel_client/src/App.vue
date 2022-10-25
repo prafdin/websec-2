@@ -7,20 +7,33 @@
        <a><router-link class="menu-item" to="/panel"  >Panel</router-link></a>
        <a><router-link class="menu-item" to="/settings" >Settings</router-link></a>
       </div>
-      <a v-show="logged" class="menu-item" href="google.com">Log out</a>
+      <a v-show="logged" @click="logout" class="menu-item">Log out</a>
     </div>
   </header>
   <br>
-  <router-view/>
+  <router-view v-on:logged="(logging_status) => this.logged = logging_status" />
 </template>
 
 <script>
+import checkLogging from '@/utils'
+
 export default {
   name: 'app',
 
+  mounted () {
+    this.logged = checkLogging()
+  },
+
   data () {
     return {
-      logged: true
+      logged: false
+    }
+  },
+
+  methods: {
+    logout () {
+      document.cookie = 'login-token' + '=; Max-Age=0'
+      this.$router.push('/login')
     }
   }
 }

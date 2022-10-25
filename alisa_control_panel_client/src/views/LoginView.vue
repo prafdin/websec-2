@@ -11,6 +11,9 @@
 import router from '@/router/router'
 
 export default {
+  mounted () {
+    this.$emit('logged', false)
+  },
   data () {
     return {
       login: '',
@@ -26,6 +29,7 @@ export default {
         }
       )
 
+      this.$emit('logged', true)
       console.log(r)
 
       router.push('/panel')
