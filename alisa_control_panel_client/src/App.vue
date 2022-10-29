@@ -31,8 +31,13 @@ export default {
   },
 
   methods: {
-    logout () {
-      document.cookie = 'login-token' + '=; Max-Age=0'
+    async logout () {
+      await fetch(
+        'http://localhost:5000/logout', {
+          method: 'GET',
+          credentials: 'include'
+        }
+      )
       this.$router.push('/login')
     }
   }

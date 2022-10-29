@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView'
 import PanelView from '../views/PanelView'
 import SettingsView from '../views/SettingsView'
+import checkLogging from "@/utils";
 
 const routes = [
   {
@@ -33,7 +34,7 @@ const router = createRouter({
 router.beforeEach(async (to) => {
   const publicPages = ['/login']
   const authRequired = !publicPages.includes(to.path)
-  const logged = document.cookie.replace(/(?:(?:^|.*;\s*)login-token\s*=\s*([^;]*).*$)|^.*$/, '$1')
+  const logged = checkLogging()
 
   if (authRequired && !logged) {
     return '/login'

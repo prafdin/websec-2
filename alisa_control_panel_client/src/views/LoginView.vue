@@ -9,10 +9,10 @@
 
 <script>
 import router from '@/router/router'
-
+import checkLogging from '@/utils'
 export default {
   mounted () {
-    this.$emit('logged', false)
+    this.$emit('logged', checkLogging())
   },
   data () {
     return {
@@ -22,17 +22,21 @@ export default {
   },
   methods: {
     async authorize () {
-      const r = await fetch(
+      const response = await fetch(
         `http://localhost:5000/auth?login=${this.login}&password=${this.password}`, {
           method: 'GET',
           credentials: 'include'
         }
       )
 
-      this.$emit('logged', true)
-      console.log(r)
+      const successCodes = [200]
 
-      router.push('/panel')
+      console.log(response.status)
+
+      if (successCodes.includes(response.status)) {
+        this.$emit('logged', true)
+        router.push('/panel')
+      }
     }
   }
 }
