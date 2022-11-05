@@ -67,7 +67,8 @@ header label {
     /*background-color: #42b983;*/
     display: flex;
     flex-flow: column;
-    align-items: center;
+    align-items: start;
+    margin: 30px;
     /*height: 100px;*/
     /*display: flex;*/
     /*flex-direction: column;*/
@@ -77,34 +78,80 @@ header label {
     width: 300px;
     height: 30px;
     border-radius: 20px;
-
+    margin-bottom: 20px;
 }
 
 .forms-place input {
-    margin: 5px;
     border-color: whitesmoke;
 }
 
 .forms-place button {
-    margin: 30px;
+    /*margin: 30px;*/
 }
+
+.device-item {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row;
+    align-items: center;
+    /*width: 200px;*/
+
+}
+
+.device-item > * {
+    margin-left: 0;
+    margin-right: 30px;
+}
+
+
+.device-item input[type="radio"]{
+    width: 25px;
+    height: 25px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 
 .forms-place button:hover {
     background-color: dodgerblue;
 }
 
 .control-item {
+    position: relative;
+    z-index: 2;
     display: flex;
-    /*align-items: flex-start;*/
-    /*align-content: center;*/
-    /*align-items: start;*/
+
     justify-content: center;
     flex-direction: column;
     height: 30px;
     padding: 30px;
-    margin: 0 0 30px;
-    border-radius: 50px;
+    border-radius: 30px;
+
     background-color: lightgray;
+}
+
+.open-control-item {
+    position: relative;
+    z-index: 1;
+    display: flex;
+
+    align-content: center;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+    top: -30px;
+    padding-top: 40px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    background-color: lightgray;
+}
+
+.open-control-item input, .open-control-item button{
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
 }
 
 .control-item:hover {
