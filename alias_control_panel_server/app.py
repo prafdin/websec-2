@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, url_for, jsonify
+from flask import Flask
 from store import SessionStore
 
 # for run in powershell: flask --app app --debug run
