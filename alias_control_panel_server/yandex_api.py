@@ -38,7 +38,7 @@ class QuasarSession:
         self.music_uid = str(self.session.get(self.music_url + '/users/' + self.login).json()['result']['uid'])
 
     def check(self):
-        r = self.session.get("https://id.yandex.ru/")
+        r = self.session.get("https://id.yandex.ru/", allow_redirects=False)
         return re.search('Авторизация', r.text) is None
 
     def post(self, url, json=None):
