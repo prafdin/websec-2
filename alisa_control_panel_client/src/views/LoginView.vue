@@ -1,9 +1,13 @@
 <template>
-  <div class="forms-place">
-    <p>Use yandex credentials for login</p>
-    <input v-model="login" id="login-input"/>
-    <input v-model="password" id="password-input" type="password" />
-    <button @click="authorize">Sign in</button>
+  <div class="view-container">
+    <div style="display: flex; justify-content: center">
+      <div class="interactions-place">
+        <p>Use yandex credentials for login</p>
+        <input v-model="login" id="login-input"/>
+        <input v-model="password" id="password-input" type="password" />
+        <button @click="authorize">Sign in</button>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -1,19 +1,19 @@
 <template>
-  <div class="workplace">
-    <div class="control-item" @click="change_device_view = !change_device_view"
-         :style="!change_device_view ? {'margin': '0 0 30px'} : {'margin': '0 0 0px'}">
-      Change device
-    </div>
-    <div v-if="change_device_view" class="open-control-item">
-      <div class="forms-place">
-        <device-view
-          v-for="d in devices"
-          :key="d"
-          v-bind:device="d"
-          @click="change_device(d)">
-        </device-view>
+  <div class="view-container">
+      <div class="control-item" @click="change_device_view = !change_device_view"
+           :class="{ 'opened-control-item': change_device_view }">
+        Change device
       </div>
-    </div>
+      <div v-if="change_device_view" class="extended-control-item">
+        <div class="interactions-place">
+          <device-view
+            v-for="d in devices"
+            :key="d"
+            v-bind:device="d"
+            @click="change_device(d)">
+          </device-view>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
 
   async mounted () {
     const response = await fetch(
-      'http://localhost:5000/get-devices', {
+      'http://localhost:5000/get-speakers', {
         method: 'GET',
         credentials: 'include'
       }

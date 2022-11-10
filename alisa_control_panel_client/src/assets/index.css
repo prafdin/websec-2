@@ -63,30 +63,24 @@ header label {
     background-color: lightblue;
 }
 
-.forms-place {
-    /*background-color: #42b983;*/
+.interactions-place {
     display: flex;
     flex-flow: column;
     align-items: start;
-    margin: 30px;
-    /*height: 100px;*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
 }
 
-.forms-place input,.forms-place button{
-    width: 300px;
-    height: 30px;
-    border-radius: 20px;
+.interactions-place > * {
     margin-bottom: 20px;
 }
 
-.forms-place input {
-    border-color: whitesmoke;
+.interactions-place input,.interactions-place button{
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
 }
 
-.forms-place button {
-    /*margin: 30px;*/
+.interactions-place input {
+    border-color: whitesmoke;
 }
 
 .device-item {
@@ -94,8 +88,6 @@ header label {
     justify-content: space-between;
     flex-flow: row;
     align-items: center;
-    /*width: 200px;*/
-
 }
 
 .device-item > * {
@@ -112,7 +104,7 @@ header label {
 }
 
 
-.forms-place button:hover {
+.interactions-place button:hover {
     background-color: dodgerblue;
 }
 
@@ -126,11 +118,16 @@ header label {
     height: 30px;
     padding: 30px;
     border-radius: 30px;
+    margin: 0 0 30px 0;  /* Due to -30px in extended-control-item */
 
     background-color: lightgray;
 }
 
-.open-control-item {
+.opened-control-item {
+    margin: 0 0 0 0;
+}
+
+.extended-control-item {
     position: relative;
     z-index: 1;
     display: flex;
@@ -141,14 +138,14 @@ header label {
     flex-direction: column;
 
     top: -30px;
-    padding-top: 40px;
+    padding: 40px 30px 30px 30px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 
     background-color: lightgray;
 }
 
-.open-control-item input, .open-control-item button{
+.extended-control-item input, .extended-control-item button{
     width: 300px;
     height: 30px;
     border-radius: 20px;
