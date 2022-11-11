@@ -1,6 +1,6 @@
 <template>
   <header class="header-class">
-    <img src="assets/alisa_logo.svg" alt="Logo" >
+    <img src="../public/alisa_logo.svg" alt="Logo" >
     <label>Alisa Control Panel</label>
     <div class="menu">
       <div style="display: flex">
