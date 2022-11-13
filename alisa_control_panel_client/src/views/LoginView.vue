@@ -5,6 +5,7 @@
         <p>Use yandex credentials for login</p>
         <input v-model="login" id="login-input"/>
         <input v-model="password" id="password-input" type="password" />
+        <p v-if="showErrorMessage" class="error-message">Login or password is incorrect!</p>
         <button @click="authorize">Sign in</button>
       </div>
     </div>
@@ -13,7 +14,7 @@
 
 <script>
 import router from '@/router/router'
-import checkLogging from '@/utils'
+import checkLogging, { successCodes } from '@/utils'
 export default {
   mounted () {
     this.$emit('logged', checkLogging())
@@ -21,7 +22,8 @@ export default {
   data () {
     return {
       login: '',
-      password: ''
+      password: '',
+      showErrorMessage: false
     }
   },
   methods: {
@@ -33,13 +35,11 @@ export default {
         }
       )
 
-      const successCodes = [200]
-
-      console.log(response.status)
-
       if (successCodes.includes(response.status)) {
         this.$emit('logged', true)
         router.push('/panel')
+      } else {
+        this.showErrorMessage = true
       }
     }
   }

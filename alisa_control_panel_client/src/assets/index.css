@@ -123,6 +123,11 @@ header label {
     background-color: lightgray;
 }
 
+.sub-control-item {
+    display: flex;
+    align-items: center;
+}
+
 .opened-control-item {
     margin: 0 0 0 0;
 }
@@ -157,4 +162,15 @@ header label {
 
 .music-input {
     margin-top: 10px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.spinner-gif {
+    height: 32px;
+    width: 32px;
+    margin-left: 10px;
 }

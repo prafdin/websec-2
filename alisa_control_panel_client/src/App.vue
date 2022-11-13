@@ -11,7 +11,8 @@
     </div>
   </header>
   <br>
-  <router-view v-on:logged="(logging_status) => this.logged = logging_status" />
+  <router-view v-on:logged="(logging_status) => this.logged = logging_status"
+               v-on:logout_event="logout"/>
 </template>
 
 <script>

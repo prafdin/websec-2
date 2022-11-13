@@ -19,6 +19,7 @@
 
 <script>
 import DeviceView from './DeviceView'
+import { successCodes } from '@/utils'
 
 export default {
   components: {
@@ -32,13 +33,11 @@ export default {
         credentials: 'include'
       }
     )
-    const successCodes = [200]
 
-    if (successCodes.includes(response.status)) {
-      this.devices = await response.json()
-      console.log(this.devices)
+    if (!(successCodes.includes(response.status))) {
+      this.$emit('logout_event')
     } else {
-      this.devices = []
+      this.devices = await response.json()
     }
   },
 
