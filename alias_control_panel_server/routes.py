@@ -48,6 +48,7 @@ def logout():
         res = create_success_response()
         res.set_cookie(UserSession.token_name, '', max_age=0)
 
+        session.close()
         session_store.remove(session)
         return res
     else:

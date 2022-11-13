@@ -16,7 +16,10 @@ class QuasarSession:
 
     def yandex_login(self, login, password):
         resp = self.session.get("https://passport.yandex.ru/auth/welcome")
-        csrf_token = re.search(r'"csrf_token" value="([^"]+)"', resp.text)[1]
+        csrf_token = re.search(r'"csrf_token" value="([^"]+)"', resp.text)
+        if (not csrf_token):
+            csrf_token = re.search(r'"csrf":"([^"]+)"', resp.text)
+        csrf_token = csrf_token[1]
         self.csrf_token = csrf_token
 
         auth_payload = {"csrf_token": csrf_token}
@@ -33,6 +36,9 @@ class QuasarSession:
             raise RuntimeError("Some error")
 
         # TODO: Correct process response status (incorrect log/pass or captcha error)
+
+    def close(self):
+        return self.session.close()
 
     def get_music_id(self):
         self.music_uid = str(self.session.get(self.music_url + '/users/' + self.login).json()['result']['uid'])

@@ -14,6 +14,9 @@ class UserSession:
     def check(self):
         return self.quasar_session.check()
 
+    def close(self):
+        return self.quasar_session.close()
+
     def get_speakers(self):
         return self.user_settings.speakers
 
