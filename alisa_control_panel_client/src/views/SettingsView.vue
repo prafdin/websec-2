@@ -19,7 +19,7 @@
 
 <script>
 import DeviceView from './DeviceView'
-import { successCodes } from '@/utils'
+import { apiUrl, successCodes } from '@/utils'
 
 export default {
   components: {
@@ -28,7 +28,7 @@ export default {
 
   async mounted () {
     const response = await fetch(
-      'http://localhost:5000/get-speakers', {
+      apiUrl + '/get-speakers', {
         method: 'GET',
         credentials: 'include'
       }
@@ -51,7 +51,7 @@ export default {
   methods: {
     change_device (device) {
       fetch(
-        'http://localhost:5000/change-device', {
+        apiUrl + '/change-device', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

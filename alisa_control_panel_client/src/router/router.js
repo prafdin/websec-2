@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView'
 import PanelView from '../views/PanelView'
 import SettingsView from '../views/SettingsView'
-import checkLogging from "@/utils";
+import checkLogging from '@/utils'
 
 const routes = [
   {

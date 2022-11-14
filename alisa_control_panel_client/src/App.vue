@@ -1,6 +1,6 @@
 <template>
   <header class="header-class">
-    <img src="../public/alisa_logo.svg" alt="Logo" >
+    <img src="./assets/alisa_logo.svg" alt="Logo" >
     <label>Alisa Control Panel</label>
     <div class="menu">
       <div style="display: flex">
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import checkLogging from '@/utils'
+import checkLogging, { apiUrl } from '@/utils'
 
 export default {
   name: 'app',
@@ -34,7 +34,7 @@ export default {
   methods: {
     async logout () {
       await fetch(
-        'http://localhost:5000/logout', {
+        apiUrl + '/logout', {
           method: 'GET',
           credentials: 'include'
         }

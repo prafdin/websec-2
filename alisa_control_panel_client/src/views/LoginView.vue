@@ -14,7 +14,7 @@
 
 <script>
 import router from '@/router/router'
-import checkLogging, { successCodes } from '@/utils'
+import checkLogging, { apiUrl, successCodes } from '@/utils'
 export default {
   mounted () {
     this.$emit('logged', checkLogging())
@@ -29,7 +29,7 @@ export default {
   methods: {
     async authorize () {
       const response = await fetch(
-        `http://localhost:5000/auth?login=${this.login}&password=${this.password}`, {
+        apiUrl + `/auth?login=${this.login}&password=${this.password}`, {
           method: 'GET',
           credentials: 'include'
         }

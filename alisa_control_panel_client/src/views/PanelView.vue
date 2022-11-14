@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { successCodes } from '@/utils'
+import { apiUrl, successCodes } from '@/utils'
 
 export default {
   data () {
@@ -46,7 +46,7 @@ export default {
     play_music () {
       this.show_play_music_spinner = true
       fetch(
-        'http://localhost:5000/play-music', {
+        apiUrl + '/play-music', {
           method: 'GET',
           credentials: 'include'
         }
@@ -61,7 +61,7 @@ export default {
     stop_music () {
       this.show_stop_music_spinner = true
       fetch(
-        'http://localhost:5000/stop-music', {
+        apiUrl + '/stop-music', {
           method: 'GET',
           credentials: 'include'
         }
@@ -76,7 +76,7 @@ export default {
     play_music_by_name () {
       this.show_play_music_by_name_spinner = true
       fetch(
-        'http://localhost:5000/play-music', {
+        apiUrl + '/play-music', {
           method: 'POST',
           credentials: 'include',
           headers: {
