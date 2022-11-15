@@ -11,7 +11,8 @@ sed -i "s/SITE_ROOT=.*/SITE_ROOT=${WWW_ROOT}/" .env
 
 if [ ! -d "venv" ]; then
   echo "Creating venv..."
-  python -m virtualenv
+  python -m pip install virtualenv
+  python -m virtualenv venv
 fi
 
 . ./venv/Scripts/activate
